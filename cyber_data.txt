@@ -1,0 +1,73 @@
+CYBERGUARD AI
+Your AI-powered Cyber Crime Awareness Assistant
+Developed by: Brinda Budhabhatti
+---------------------------------------------
+CyberGuard AI is a virtual assistant designed to spread awareness about cyber safety and help users understand cyber crimes in India. It answers frequently asked questions, gives prevention tips, and guides users on what to do if they become a victim.
+
+CyberGuard AI acts as a one-stop solution for cyber awareness.
+
+---------------------------------------------
+GENERAL INTRODUCTION
+Cyber crime refers to illegal activities carried out using computers or the internet. It includes hacking, phishing, online fraud, identity theft, cyber bullying, data breaches, and much more.
+
+The Indian government has established dedicated cyber crime departments under state police to handle such cases. Citizens can report online crimes through the National Cyber Crime Reporting Portal.
+
+---------------------------------------------
+NATIONAL CYBER CRIME REPORTING PORTAL
+Website: https://cybercrime.gov.in
+
+The National Cyber Crime Reporting Portal allows citizens to report incidents like:
+- Online financial fraud
+- Cyber harassment or stalking
+- Social media account hacking
+- Child sexual abuse material (CSAM)
+- Online blackmail or threats
+
+Always keep screenshots, chat logs, and payment details as proof before reporting.
+
+---------------------------------------------
+HELPLINE NUMBER
+Dial 1930 (India’s National Cyber Crime Helpline)
+You can call this number for immediate assistance related to cyber frauds.
+
+---------------------------------------------
+COMMON TYPES OF CYBER CRIMES
+
+1. **Phishing** – Fake emails or messages that trick you into revealing personal info.
+2. **Vishing** – Phone call scams pretending to be from banks or officials.
+3. **Smishing** – Fraudulent SMS messages with malicious links.
+4. **Hacking** – Unauthorized access to systems or accounts.
+5. **Ransomware** – Malware that locks your files and demands payment.
+6. **Identity Theft** – Stealing personal details to impersonate someone.
+7. **Cyber Bullying** – Using social media or messages to threaten or humiliate someone.
+8. **Online Shopping Fraud** – Fake sellers or websites that take money but never deliver.
+
+---------------------------------------------
+LEGAL PROVISIONS IN INDIA
+Cyber crimes are mainly governed under:
+- **Information Technology Act, 2000 (IT Act)**
+- **Indian Penal Code (IPC) sections** for fraud, defamation, etc.
+
+Some important sections:
+- **Section 66C** – Identity theft.
+- **Section 66D** – Cheating by impersonation using computer resources.
+- **Section 67** – Publishing obscene material in electronic form.
+- **Section 69** – Power to intercept and monitor information.
+- **Section 72** – Breach of confidentiality and privacy.
+
+---------------------------------------------
+WHAT TO DO IF YOU’RE A VICTIM OF CYBER CRIME
+1. Report immediately at https://cybercrime.gov.in or dial 1930.
+2. Inform your local cyber cell or police station.
+3. Collect all evidence (screenshots, emails, transactions).
+4. Change all your passwords.
+5. Inform your bank if money is involved.
+6. Do not delete or ignore suspicious messages — report them.
+
+---------------------------------------------
+👩ABOUT CYBERGUARD AI
+CyberGuard AI was developed by **Brinda Budhabhatti**, a Computer Engineering student passionate about Cyber Security and AI.
+
+This chatbot is designed as a micro-project for *Fundamentals of Artificial Intelligence*, using **LangChain**, **Groq LLM**, and **HuggingFace Embeddings** to help citizens learn about cyber awareness interactively.
+
+CyberGuard AI — Helping India stay cyber safe!
