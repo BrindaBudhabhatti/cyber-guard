@@ -7,6 +7,10 @@ from langchain_groq import ChatGroq
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
 
+import os
+from langchain_groq import ChatGroq
+
+api_key = os.getenv("GROQ_API_KEY")
 
 @st.cache_resource(show_spinner=False)
 def load_chain():
@@ -16,7 +20,7 @@ def load_chain():
     splits = splitter.split_documents(docs)
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vectorstore = FAISS.from_documents(splits, embeddings)
-    llm = ChatGroq(model="llama-3.3-70b-versatile", api_key="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") 
+    llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key) 
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     chain = ConversationalRetrievalChain.from_llm(
         llm=llm,
