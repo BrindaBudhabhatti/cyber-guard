@@ -28,6 +28,9 @@ def load_chain():
 qa_chain = load_chain()
 
 
+st.set_page_config(page_title="CyberGuard AI", page_icon="🛡️", layout="wide")
+
+
 st.markdown("""
 <div class="header">
     <h2 style='text-align:center;'>🛡️ CyberGuard AI</h2>
@@ -37,7 +40,13 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-## --------------------
+with st.sidebar:
+    st.header("⚙️ About CyberGuard AI")
+    st.write("Developed by **Brinda Budhabhatti**")
+    st.write("Built using **LangChain + Groq + Streamlit**")
+    st.markdown("[🔗 Report Cyber Crime (India)](https://cybercrime.gov.in/)")
+
+
 
 # Initialize chat history
 if "chat_history" not in st.session_state:
@@ -66,3 +75,4 @@ if user_query:
         answer = result["answer"]
     st.session_state.chat_history.append(("CyberGuard AI", answer))
     st.rerun()
+
