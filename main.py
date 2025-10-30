@@ -4,9 +4,10 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
-from langchain.chains import ConversationalRetrievalChain
+# from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferMemory
-
+from langchain.chains import create_retrieval_chain
+from langchain.chains.history_aware_retriever import create_history_aware_retriever
 import os
 from langchain_groq import ChatGroq
 
@@ -22,11 +23,11 @@ def load_chain():
     vectorstore = FAISS.from_documents(splits, embeddings)
     llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key) 
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
-    chain = ConversationalRetrievalChain.from_llm(
-        llm=llm,
-        retriever=vectorstore.as_retriever(),
-        memory=memory
-    )
+
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+    history_aware_retriever = create_history_aware_retriever(llm, retriever)
+
+    chain = create_retrieval_chain(history_aware_retriever, llm)
     return chain
 
 qa_chain = load_chain()
@@ -75,9 +76,9 @@ user_query = st.chat_input("Type your question about cyber safety...")
 if user_query:
     st.session_state.chat_history.append(("You", user_query))
     with st.spinner("Analyzing your question..."):
-        result = qa_chain.invoke({"question": user_query})
-        answer = result["answer"]
+        result = qa_chain.invoke({"input": user_query})
+        answer = result["answer"] if "answer" in result else result["output"]
+
     st.session_state.chat_history.append(("CyberGuard AI", answer))
     st.rerun()
-
 
