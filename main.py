@@ -5,7 +5,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 # from langchain.chains import ConversationalRetrievalChain
-from langchain.memory import ConversationBufferMemory
+# from langchain.memory import ConversationBufferMemory
 from langchain.chains import create_retrieval_chain
 from langchain.chains.history_aware_retriever import create_history_aware_retriever
 import os
@@ -22,7 +22,7 @@ def load_chain():
     embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
     vectorstore = FAISS.from_documents(splits, embeddings)
     llm = ChatGroq(model="llama-3.3-70b-versatile", api_key=api_key) 
-    memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+    # memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
 
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
     history_aware_retriever = create_history_aware_retriever(llm, retriever)
@@ -81,4 +81,5 @@ if user_query:
 
     st.session_state.chat_history.append(("CyberGuard AI", answer))
     st.rerun()
+
 
